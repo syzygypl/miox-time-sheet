@@ -7,6 +7,30 @@
     {
       "name": "CCE",
       "task": "MAZ-15"
+    },
+    {
+      "name": "Overall Forms Improvements",
+      "task": "MAZ-3"
+    },
+    {
+      "name": "GAT",
+      "task": "MAZ-12"
+    },
+    {
+      "name": "General technical improvements",
+      "task": "MAZ-13"
+    },
+    {
+      "name": "o2o, internal meetings",
+      "task": "MAZ-14"
+    },
+    {
+      "name": "Finance Calculator",
+      "task": "MAZ-22"
+    },
+    {
+      "name": "Lack of work",
+      "task": "MAZ-1"
     }
   ]
 }
