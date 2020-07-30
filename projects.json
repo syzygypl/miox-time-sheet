@@ -31,6 +31,14 @@
     {
       "name": "Lack of work",
       "task": "MAZ-1"
+    },
+    {
+      "name": "Trade-In",
+      "task": "MAZ-37"
+    },
+    {
+      "name": "CX Range",
+      "task": "MAZ-36"
     }
   ]
 }
