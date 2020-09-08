@@ -40,5 +40,10 @@
       "name": "CX Range",
       "task": "MAZ-36"
     }
+    ,
+    {
+      "name": "Charging calculator",
+      "task": "MAZ-39"
+    }
   ]
 }
