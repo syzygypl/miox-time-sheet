@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .extension {
+        width: 300px;
+      }
+
+      .extension__element {
+        padding-bottom: 10px;
+      }
+
+      .extension__element--work-desc:hover .templates {
+        display: block;
+      }
+
+      .extension__element-label {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 10px;
+      }
+
+      .extention__element-field {
+        padding: 5px 10px;
+        border: 1px solid #0747a6;
+        width: 100%;
+      }
+
+      .extention__element-field.has-error {
+        border: 3px solid red;
+      }
+
+      .extention__element-field--submit {
+        text-align: center;
+        text-transform: uppercase;
+        background-color: #0747a6;
+        font-weight: 700;
+        cursor: pointer;
+        color: #ffffff;
+        transition: opacity 0.3s;
+      }
+
+      .extention__element-field--submit:hover {
+        opacity: 0.5;
+      }
+
+      .time-select {
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+      }
+
+      .time-select__field {
+        border: none;
+        background-color: transparent;
+        padding: 5px 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .templates {
+        display: none;
+      }
+
+      .templates button {
+        border: none;
+        background-color: lightgray;
+        border-radius: 3px;
+        padding: 3px 5px;
+        font-size: 12px;
+        margin-bottom: 3px;
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+
+      .templates button:hover {
+        opacity: 0.7;
+      }
+
+      .version {
+        padding: 5px;
+        text-align: center;
+        background-color: blue;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="extension">
+      <div class="version">version 4.0</div>
+      <div class="extension__element">
+        <label for="time-spent-h" class="extension__element-label">time:</label>
+
+        <div class="time-select">
+          <select id="time-spent-h" class="time-select__field">
+            <option value="0h">0h</option>
+            <option value="1h">1h</option>
+            <option value="2h">2h</option>
+            <option value="3h">3h</option>
+            <option value="4h">4h</option>
+            <option value="5h">5h</option>
+            <option value="6h">6h</option>
+            <option value="7h">7h</option>
+            <option value="8h">8h</option>
+          </select>
+
+          <select id="time-spent-m" class="time-select__field">
+            <option value="0m">0m</option>
+            <option value="15m">15m</option>
+            <option value="30m">30m</option>
+            <option value="45m">45m</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="extension__element">
+
+        <label for="jira-pl-task-id" class="extension__element-label">
+          project:
+        </label>
+
+
+        <select id="jira-pl-task-id" class="extention__element-field">
+        </select>
+      </div>
+
+      <div class="extension__element extension__element--work-desc">
+        <label for="work-desc" class="extension__element-label"
+          >description:</label
+        >
+        <textarea
+          id="work-desc"
+          class="extention__element-field"
+          type="text"
+        ></textarea>
+        <div class="templates" id="desc-templates">
+          <button>project planning</button>
+          <button>daily</button>
+          <button>tasks overview</button>
+        </div>
+      </div>
+
+      <button
+        id="submit"
+        class="extention__element-field extention__element-field--submit"
+      >
+        Submit</button
+      ><br />
+    </section>
+    <script src="extensionDialog.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
