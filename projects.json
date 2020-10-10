@@ -1,16 +1,24 @@
 {
   "projects": [
     {
-      "name": "PLM",
-      "task": "MAZ-2"
+      "name": "PLM Bugfixing",
+      "task": "MAZ-42"
+    },
+    {
+      "name": "PLM Continous Improvement",
+      "task": "MAZ-45"
+    },
+    {
+      "name": "PLM Platform Maintenance",
+      "task": "MAZ-43"
+    },
+    {
+      "name": "PLM Platform Management",
+      "task": "MAZ-44"
     },
     {
       "name": "CCE",
       "task": "MAZ-15"
-    },
-    {
-      "name": "Overall Forms Improvements",
-      "task": "MAZ-3"
     },
     {
       "name": "GAT",
@@ -21,10 +29,6 @@
       "task": "MAZ-13"
     },
     {
-      "name": "o2o, internal meetings",
-      "task": "MAZ-14"
-    },
-    {
       "name": "Finance Calculator",
       "task": "MAZ-22"
     },
@@ -33,17 +37,8 @@
       "task": "MAZ-1"
     },
     {
-      "name": "TradeIn",
-      "task": "MAZ-37"
-    },
-    {
       "name": "CX Range",
       "task": "MAZ-36"
-    }
-    ,
-    {
-      "name": "Charging calculator",
-      "task": "MAZ-39"
-    }
+    },
   ]
 }
