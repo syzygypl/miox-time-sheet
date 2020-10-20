@@ -43,6 +43,10 @@
     {
       "name": "Oracle integration",
       "task": "MAZ-41"
+    },
+    {
+      "name": "Card Module Enhancement",
+      "task": "MAZ-47"
     }
   ]
 }
