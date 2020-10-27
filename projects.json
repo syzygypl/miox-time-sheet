@@ -47,6 +47,10 @@
     {
       "name": "Card Module Enhancement",
       "task": "MAZ-47"
+    },
+    {
+      "name": "Dealer Locator",
+      "task": "MAZ-48"
     }
   ]
 }
