@@ -51,6 +51,10 @@
     {
       "name": "Dealer Locator",
       "task": "MAZ-48"
+    },
+    {
+      "name": "Captcha rework",
+      "task": "MAZ-49"
     }
   ]
 }
