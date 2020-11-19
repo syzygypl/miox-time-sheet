@@ -55,6 +55,10 @@
     {
       "name": "Captcha rework",
       "task": "MAZ-49"
+    },
+    {
+      "name": "Grade Comparison",
+      "task": "MAZ-50"
     }
   ]
 }
