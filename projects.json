@@ -59,6 +59,10 @@
     {
       "name": "Grade Comparison",
       "task": "MAZ-50"
+    },
+    {
+      "name": "Test Automation",
+      "task": "MAZ-52"
     }
   ]
 }
