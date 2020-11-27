@@ -37,16 +37,8 @@
       "task": "MAZ-1"
     },
     {
-      "name": "CX Range",
-      "task": "MAZ-36"
-    },
-    {
       "name": "Oracle integration",
       "task": "MAZ-41"
-    },
-    {
-      "name": "Card Module Enhancement",
-      "task": "MAZ-47"
     },
     {
       "name": "Dealer Locator",
@@ -63,6 +55,10 @@
     {
       "name": "Test Automation",
       "task": "MAZ-52"
+    },
+    {
+      "name": "Intern HG",
+      "task": "MAZ-53"
     }
   ]
 }
