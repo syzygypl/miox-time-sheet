@@ -63,6 +63,10 @@
     {
       "name": "Cx Range 2",
       "task": "MAZ-55"
-    }
+    },
+    {
+      "name": "Press Portal",
+      "task": "MAZ-54"
+    },
   ]
 }
