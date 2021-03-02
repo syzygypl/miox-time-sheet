@@ -67,6 +67,10 @@
     {
       "name": "Press Portal",
       "task": "MAZ-54"
+    },
+    {
+      "name": "Main Navi rework",
+      "task": "MAZ-58"
     }
   ]
 }
