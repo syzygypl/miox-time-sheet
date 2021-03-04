@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener(function(request) {
   if (request.type === "LOG_WORK_IN_JIRA_PL") {
     chrome.tabs.create(
       {
-        url: `https://prod.jira.syzygy.pl/browse/${request.payload.jiraPLTaskID}`,
+        url: `https://jira.syzygy.pl/browse/${request.payload.jiraPLTaskID}`,
         active: false
       },
       function(tab) {
