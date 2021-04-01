@@ -25,6 +25,10 @@
       "task": "MAZ-57"
     },
     {
+      "name": "GAT Chat",
+      "task": "MAZ-60"
+    },
+    {
       "name": "General technical improvements",
       "task": "MAZ-13"
     },
