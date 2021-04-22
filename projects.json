@@ -75,6 +75,10 @@
     {
       "name": "Main Navi rework",
       "task": "MAZ-58"
+    },
+    {
+      "name": "Data Layers",
+      "task": "MAZ-61"
     }
   ]
 }
