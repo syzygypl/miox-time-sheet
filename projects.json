@@ -39,22 +39,10 @@
     {
       "name": "Lack of work",
       "task": "MAZ-1"
-    },
-    {
-      "name": "Oracle integration",
-      "task": "MAZ-41"
-    },
+    }
     {
       "name": "Dealer Locator",
       "task": "MAZ-48"
-    },
-    {
-      "name": "Captcha rework",
-      "task": "MAZ-49"
-    },
-    {
-      "name": "Grade Comparison",
-      "task": "MAZ-50"
     },
     {
       "name": "Test Automation",
@@ -63,10 +51,6 @@
     {
       "name": "Intern HG",
       "task": "MAZ-53"
-    },
-    {
-      "name": "Cx Range 2",
-      "task": "MAZ-55"
     },
     {
       "name": "Press Portal",
@@ -79,6 +63,10 @@
     {
       "name": "Data Layers",
       "task": "MAZ-61"
+    },
+    {
+      "name": "Maxymiser",
+      "task": "MAZ-62
     }
   ]
 }
