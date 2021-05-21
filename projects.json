@@ -67,6 +67,10 @@
     {
       "name": "Maxymiser",
       "task": "MAZ-62"
+    },
+    {
+      "name": "FMM",
+      "task": "MAZ-63"
     }
   ]
 }
