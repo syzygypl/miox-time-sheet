@@ -71,6 +71,10 @@
     {
       "name": "FMM",
       "task": "MAZ-63"
+    },
+    {
+    "name": "Candyspace",
+    "task": "MAZ-64"
     }
   ]
 }
