@@ -65,8 +65,24 @@
       "task": "MAZ-63"
     },
     {
-    "name": "Candyspace",
-    "task": "MAZ-64"
+      "name": "Candyspace",
+      "task": "MAZ-64"
+    }, 
+    {
+     "name": "NBA feature",
+     "task": "MAZ-67"
+    },
+    {
+     "name": "Content Support",
+     "task": "MAZ-65"
+    },
+    {
+      "name": "MIOX - OTA",
+      "task": "MAZ-66"
+    },
+    {
+     "name": "Sales Campaign",
+     "task": "MAZ-68"
     }
   ]
 }
