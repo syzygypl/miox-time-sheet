@@ -29,10 +29,6 @@
       "task": "MAZ-22"
     },
     {
-      "name": "Lack of work",
-      "task": "MAZ-1"
-    },
-    {
       "name": "Dealer Locator",
       "task": "MAZ-48"
     },
@@ -49,10 +45,6 @@
       "task": "MAZ-54"
     },
     {
-      "name": "Main Navi rework",
-      "task": "MAZ-58"
-    },
-    {
       "name": "Data Layers",
       "task": "MAZ-61"
     },
@@ -61,28 +53,12 @@
       "task": "MAZ-62"
     },
     {
-      "name": "FMM",
-      "task": "MAZ-63"
-    },
-    {
-      "name": "Candyspace",
+      "name": "MMUK Dealer Websites",
       "task": "MAZ-64"
     }, 
     {
      "name": "NBA feature",
      "task": "MAZ-67"
-    },
-    {
-     "name": "Content Support",
-     "task": "MAZ-65"
-    },
-    {
-      "name": "MIOX - OTA",
-      "task": "MAZ-66"
-    },
-    {
-     "name": "Sales Campaign",
-     "task": "MAZ-68"
     }
   ]
 }
