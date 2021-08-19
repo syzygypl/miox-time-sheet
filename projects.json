@@ -63,6 +63,10 @@
     {
       "name": "Card rework",
       "task": "MAZ-69"
+    },
+    {
+      "name": "Model Flyout Rework",
+      "task": "MAZ-71"
     }
   ]
 }
