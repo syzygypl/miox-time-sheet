@@ -57,16 +57,16 @@
       "task": "MAZ-64"
     }, 
     {
-     "name": "NBA feature",
-     "task": "MAZ-67"
-    },
-    {
       "name": "Card rework",
       "task": "MAZ-69"
     },
     {
       "name": "Model Flyout Rework",
       "task": "MAZ-71"
+    },
+    {
+      "name": "DiB / FindMyMazda",
+      "task": "MAZ-70"
     }
   ]
 }
