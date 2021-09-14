@@ -67,6 +67,18 @@
     {
       "name": "DiB / FindMyMazda",
       "task": "MAZ-70"
+    },
+    {
+      "name": "Checkout Journey",
+      "task": "MAZ-72"
+    },
+    {
+      "name": "Hero rework",
+      "task": "MAZ-73"
+    },
+    {
+      "name": "OneTrust cookie",
+      "task": "MAZ-74"
     }
   ]
 }
