@@ -79,6 +79,10 @@
     {
       "name": "OneTrust cookie",
       "task": "MAZ-74"
+    },
+    {
+      "name": "OSB Integration",
+      "task": "MAZ-75"
     }
   ]
 }
