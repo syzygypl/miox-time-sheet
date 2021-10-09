@@ -1,0 +1,42 @@
+{
+  "authors": [
+    {
+      "name": "Jan Kowalski",
+      "id": 0
+    },
+    {
+      "name": "Piotr Nowak",
+      "id": 1
+    },
+    {
+      "name": "Janina Kowalska",
+      "id": 2
+    }
+  ],
+  "articles": [
+    {
+      "title": "Some title",
+      "id": 0,
+      "authorId": 0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "title": "Super title",
+      "id": 2,
+      "authorId": 0,
+      "description": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto "
+    },
+    {
+      "title": "The standard Lorem Ipsum passage, used since the 1500s",
+      "id": 3,
+      "authorId": 1,
+      "description": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur"
+    },
+    {
+      "title": "Trash",
+      "id": 4,
+      "authorId": 4,
+      "description": "Ut enim ad minima veniam"
+    }
+  ]
+}
