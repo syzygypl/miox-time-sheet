@@ -55,7 +55,7 @@
     {
       "name": "MMUK Dealer Websites",
       "task": "MAZ-64"
-    }, 
+    },
     {
       "name": "Card rework",
       "task": "MAZ-69"
@@ -83,6 +83,10 @@
     {
       "name": "OSB Integration",
       "task": "MAZ-75"
+    },
+    {
+      "name": "TEST",
+      "task": "MAZ-79"
     }
   ]
 }
