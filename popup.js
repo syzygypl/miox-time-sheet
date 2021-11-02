@@ -33,21 +33,40 @@ chrome.runtime.onMessage.addListener(function(request) {
 });
 
 function logWork(timeSpent, taskId, taskName, taskDesc, target, jiraPLTaskID, desc) {
+  const getElements = () => {
+    return {
+      logWorkDialogTrigger: document.querySelector("#log-work"),
+
+      timeSpentInput: document.querySelector("#log-work-time-logged"),
+      workDescInput: document.querySelector(".jira-dialog-content textarea"),
+      submitBtn: document.querySelector("#log-work-submit")
+    };
+  };
+
+
+
   const waitForLogWorkDialogOpen = () => {
     const TIMEOUT = 1000;
-    const MAX_ATTEMPS = 30;
+    const MAX_ATTEMPS = 60;
 
     return new Promise((resolve, reject) => {
       function findDialog(attemp = 0) {
+        document.title = "waiting for log dialog";
         if (attemp++ === MAX_ATTEMPS) {
           reject(
             "Log dialog error, can't find [#log-work-time-logged] on page"
           );
         }
 
-        const logWorkDialog = document.querySelector("#log-work-time-logged");
+        const elements = getElements();
+        if (elements.logWorkDialogTrigger) {
+          elements.logWorkDialogTrigger.click();
+        }
+
+        const logWorkDialog = elements.timeSpentInput;
         if (logWorkDialog) {
           resolve("Log dialog ready");
+          document.title = "log dialog ready";
         } else {
           setTimeout(function() {
             findDialog(attemp);
@@ -59,23 +78,13 @@ function logWork(timeSpent, taskId, taskName, taskDesc, target, jiraPLTaskID, de
     });
   };
 
-  const getElements = () => {
-    return {
-      logWorkDialogTrigger: document.querySelector("#log-work"),
-
-      timeSpentInput: document.querySelector("#log-work-time-logged"),
-      workDescInput: document.querySelector(".jira-dialog-content textarea"),
-      submitBtn: document.querySelector("#log-work-submit")
-    };
-  };
-
-  const elements = getElements();
 
   async function submit() {
     try {
       await waitForLogWorkDialogOpen();
-
       const elements = getElements();
+
+      document.title = "filling log dialog";
       elements.timeSpentInput.value = timeSpent;
       elements.workDescInput.innerText =
         target === "de"
@@ -116,16 +125,6 @@ function logWork(timeSpent, taskId, taskName, taskDesc, target, jiraPLTaskID, de
       }
     });
   };
-
-  const openWorkLogDialog = () => {
-    elements.logWorkDialogTrigger.click();
-  };
-
-  if (elements.logWorkDialogTrigger) {
-    openWorkLogDialog();
-  } else {
-    showAlert("Error: can't find [#log-work] on page");
-  }
 
   submit();
 }
