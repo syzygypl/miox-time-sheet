@@ -87,6 +87,10 @@
     {
       "name": "J30 Tease",
       "task": "MAZ-85"
+    },
+    {
+      "name": "OSP (Online Shop Provider)",
+      "task": "MAZ-84"
     }
   ]
 }
