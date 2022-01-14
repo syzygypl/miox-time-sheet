@@ -91,6 +91,10 @@
     {
       "name": "OSP (Online Shop Provider)",
       "task": "MAZ-84"
+    },
+    {
+      "name": "New Showroom CX-60",
+      "task": "MAZ-86"
     }
   ]
 }
