@@ -29,56 +29,20 @@
       "task": "MAZ-22"
     },
     {
-      "name": "Dealer Locator",
-      "task": "MAZ-48"
-    },
-    {
       "name": "Intern HG",
       "task": "MAZ-53"
     },
     {
       "name": "Data Layers",
-      "task": "MAZ-61"
-    },
-    {
-      "name": "Maxymiser",
-      "task": "MAZ-62"
-    },
-    {
-      "name": "MMUK Dealer Websites",
-      "task": "MAZ-64"
-    },
-    {
-      "name": "Card rework",
-      "task": "MAZ-69"
+      "task": "MAZ-77"
     },
     {
       "name": "Model Flyout Rework",
       "task": "MAZ-71"
     },
     {
-      "name": "DiB / FindMyMazda",
-      "task": "MAZ-70"
-    },
-    {
-      "name": "Checkout Journey",
-      "task": "MAZ-72"
-    },
-    {
-      "name": "Hero rework",
-      "task": "MAZ-73"
-    },
-    {
-      "name": "OneTrust cookie",
-      "task": "MAZ-74"
-    },
-    {
       "name": "OSB Integration",
       "task": "MAZ-75"
-    },
-    {
-      "name": "J30 Tease",
-      "task": "MAZ-85"
     },
     {
       "name": "OSP (Online Shop Provider)",
