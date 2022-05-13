@@ -59,6 +59,10 @@
     {
       "name": "Cloudinary",
       "task": "MAZ-88"
-    }
+    },
+    {
+      "name": "OneTrust cookies",
+      "task": "MAZ-74"
+    },
   ]
 }
