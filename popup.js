@@ -18,7 +18,7 @@ chrome.runtime.onMessage.addListener(function(request) {
   if (request.type === "LOG_WORK_IN_JIRA_DE") {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       chrome.tabs.executeScript(tabs[0].id, {
-        code: `(${logWork}('${request.payload.timeSpent}', '${request.payload.taskId}', '${request.payload.taskName}', '${request.payload.taskDesc}', 'de'))`
+        code: `(${logWork}('${request.payload.timeSpent}', '${request.payload.taskId}', '${request.payload.taskName}', '${request.payload.taskDesc}', 'de', '${request.payload.jiraPLTaskID}'))`
       });
     });
   }
@@ -88,7 +88,7 @@ function logWork(timeSpent, taskId, taskName, taskDesc, target, jiraPLTaskID, de
       elements.timeSpentInput.value = timeSpent;
       elements.workDescInput.innerText =
         target === "de"
-          ? taskDesc.replace(/&quot;/g, "'")
+          ? `${jiraPLTaskID}: ${taskDesc.replace(/&quot;/g, "'")}`
           : `${taskId}, ${taskName}, ${taskId}, ${taskDesc.replace(/&quot;/g, "'")}! ${desc}`;
 
       elements.submitBtn.click();
@@ -112,7 +112,8 @@ function logWork(timeSpent, taskId, taskName, taskDesc, target, jiraPLTaskID, de
         timeSpent,
         taskId,
         taskName,
-        taskDesc
+        taskDesc,
+        jiraPLTaskID
       }
     });
   };
