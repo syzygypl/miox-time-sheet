@@ -71,6 +71,10 @@
     {
       "name": "Forms enhancement",
       "task": "MAZ-94"
+    },
+    {
+      "name": "Showroom Agenda",
+      "task": "MAZ-95"
     }
   ]
 }
