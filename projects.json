@@ -37,24 +37,8 @@
       "task": "MAZ-77"
     },
     {
-      "name": "Model Flyout Rework",
-      "task": "MAZ-71"
-    },
-    {
       "name": "OSB Upsell",
       "task": "MAZ-91"
-    },
-    {
-      "name": "OSP (Online Shop Provider)",
-      "task": "MAZ-84"
-    },
-    {
-      "name": "New Showroom CX-60",
-      "task": "MAZ-86"
-    },
-    {
-      "name": "New Showroom CX-60 - CR",
-      "task": "MAZ-89"
     },
     {
       "name": "Cloudinary",
@@ -75,6 +59,14 @@
     {
       "name": "Showroom Agenda",
       "task": "MAZ-95"
+    },
+    {
+      "name": "Owners Section,
+      "task": "MAZ-96"
+    },
+    {
+      "name": "MX-30 Showroom",
+      "task": "MAZ-97"
     }
   ]
 }
