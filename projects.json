@@ -1,16 +1,12 @@
 {
   "projects": [
     {
-      "name": "PLM Bugfixing",
-      "task": "MAZ-42"
+      "name": "Maintenance & Bugfixing",
+      "task": "MAZ-99"
     },
     {
       "name": "PLM Continous Improvement",
       "task": "MAZ-45"
-    },
-    {
-      "name": "PLM Platform Maintenance",
-      "task": "MAZ-43"
     },
     {
       "name": "PLM Platform Management",
