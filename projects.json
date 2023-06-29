@@ -64,9 +64,13 @@
       "name": "MX 30 Showroom",
       "task": "MAZ-97"
     },
-     {
+    {
       "name": "Owners Hub",
       "task": "MAZ-100"
+    },
+    {
+      "name": "MX 30 extended comparison module",
+      "task": "MAZ-101"
     }
   ]
 }
