@@ -71,6 +71,10 @@
     {
       "name": "MX 30 extended comparison module",
       "task": "MAZ-101"
+    },
+    {
+      "name": "TCMR/Finance Renewal Page",
+      "task": "MAZ-78"
     }
   ]
 }
