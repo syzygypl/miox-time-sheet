@@ -79,6 +79,10 @@
     {
       "name": "SUV Range Page - Comparison Table",
       "task": "MAZ-102"
+    },
+    {
+      "name": "MIOX SLA",
+      "task": "MAZ-59"
     }
   ]
 }
