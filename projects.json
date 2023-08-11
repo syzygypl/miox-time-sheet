@@ -75,6 +75,10 @@
     {
       "name": "TCMR/Finance Renewal Page",
       "task": "MAZ-78"
+    },
+    {
+      "name": "SUV Range Page - Comparison Table",
+      "task": "MAZ-102"
     }
   ]
 }
