@@ -29,10 +29,6 @@
       "task": "MAZ-53"
     },
     {
-      "name": "OSB Upsell",
-      "task": "MAZ-91"
-    },
-    {
       "name": "OneTrust cookies",
       "task": "MAZ-74"
     },
@@ -45,20 +41,8 @@
       "task": "MAZ-94"
     },
     {
-      "name": "Showroom Agenda",
-      "task": "MAZ-95"
-    },
-    {
-      "name": "Owners Section",
-      "task": "MAZ-96"
-    },
-    {
       "name": "MX 30 Showroom",
       "task": "MAZ-97"
-    },
-    {
-      "name": "Owners Hub",
-      "task": "MAZ-100"
     },
     {
       "name": "MX 30 extended comparison module",
