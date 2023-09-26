@@ -29,16 +29,8 @@
       "task": "MAZ-53"
     },
     {
-      "name": "Data Layers",
-      "task": "MAZ-77"
-    },
-    {
       "name": "OSB Upsell",
       "task": "MAZ-91"
-    },
-    {
-      "name": "Cloudinary",
-      "task": "MAZ-88"
     },
     {
       "name": "OneTrust cookies",
