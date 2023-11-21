@@ -59,6 +59,10 @@
     {
       "name": "MIOX SLA",
       "task": "MAZ-59"
+    },
+    {
+      "name": "GA4 Implementation",
+      "task": "MAZ-103"
     }
   ]
 }
