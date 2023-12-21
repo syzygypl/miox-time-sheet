@@ -63,6 +63,10 @@
     {
       "name": "GA4 Implementation",
       "task": "MAZ-103"
+    },
+    {
+      "name": "HomePage Rework",
+      "task": "MAZ-104"
     }
   ]
 }
