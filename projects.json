@@ -67,6 +67,10 @@
     {
       "name": "HomePage Rework",
       "task": "MAZ-104"
+    },
+    {
+      "name": "Platform Intelligence",
+      "task": "MAZ-105"
     }
   ]
 }
