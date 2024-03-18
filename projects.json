@@ -75,6 +75,10 @@
     {
       "name": "TCMR/Finance Renewal Page",
       "task": "MAZ-78"
-    }
+    },
+     {
+       "name": "Online Service Booking",
+       "task": "MAZ-91"
+     }
   ]
 }
