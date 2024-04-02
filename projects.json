@@ -2,79 +2,79 @@
   "projects": [
     {
       "name": "Maintenance & Bugfixing",
-      "task": "MAZ-99"
+      "task": "MAZMB-1"
     },
     {
       "name": "PLM Continous Improvement",
-      "task": "MAZ-45"
+      "task": "MAZPLMCI-1"
     },
     {
       "name": "PLM Platform Management",
-      "task": "MAZ-44"
+      "task": "MAZPLMPM-1"
     },
     {
       "name": "CCE",
-      "task": "MAZ-15"
+      "task": "MAZCCE-1"
     },
     {
       "name": "General technical improvements",
-      "task": "MAZ-13"
+      "task": "MAZGTI-1"
     },
     {
       "name": "Finance Calculator",
-      "task": "MAZ-22"
+      "task": "MAZFC-1"
     },
     {
       "name": "Intern HG",
-      "task": "MAZ-53"
+      "task": "MAZIHG-1"
     },
     {
       "name": "OneTrust cookies",
-      "task": "MAZ-74"
+      "task": "MAZOTC-1"
     },
     {
       "name": "Maxymiser",
-      "task": "MAZ-62"
+      "task": "MAZMAX-1"
     },
     {
       "name": "Forms enhancement",
-      "task": "MAZ-94"
+      "task": "MAZPLMCI-4"
     },
     {
       "name": "MX 30 Showroom",
-      "task": "MAZ-97"
+      "task": "MAZMX30SR-1"
     },
     {
       "name": "MX 30 extended comparison module",
-      "task": "MAZ-101"
+      "task": "MAZPLMCI-3"
     },
     {
       "name": "TCMR/Finance Renewal Page",
-      "task": "MAZ-78"
+      "task": "MAZTCMR-1"
     },
     {
       "name": "SUV Range Page - Comparison Table",
-      "task": "MAZ-102"
+      "task": "MAZPLMCI-5"
     },
     {
       "name": "MIOX SLA",
-      "task": "MAZ-59"
+      "task": "MAZMSLA-1"
     },
     {
       "name": "GA4 Implementation",
-      "task": "MAZ-103"
+      "task": "MAZGA4I-1"
     },
     {
       "name": "HomePage Rework",
-      "task": "MAZ-104"
+      "task": "MAZPLMCI-2"
     },
     {
       "name": "Platform Intelligence",
-      "task": "MAZ-105"
+      "task": "MAZPI-1"
     },
     {
       "name": "Online Service Booking",
-      "task": "MAZ-91"
+      "task": "MAZOSBU-1"
     }
   ]
 }
