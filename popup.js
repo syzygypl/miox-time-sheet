@@ -1,16 +1,13 @@
 "use strict";
 
 chrome.runtime.onMessage.addListener(function(request) {
-  if (request.type === "LOG_WORK_IN_JIRA_PL") {
+  if (request.type === "OPEN_JIRA_PL") {
     chrome.tabs.create(
       {
-        url: `https://jira.syzygy.pl/browse/${request.payload.jiraPLTaskID}`,
+        url: `https://jirasyzygy.atlassian.net/browse/${request.payload.jiraPLTaskID}`,
         active: false
       },
       function(tab) {
-        chrome.tabs.executeScript(tab.id, {
-          code: `(${logWork}('${request.payload.timeSpent}', '${request.payload.taskId}', '${request.payload.taskName}', '${request.payload.taskDesc}', 'pl', '${request.payload.jiraPLTaskID}', '${request.payload.desc}'))`
-        });
       }
     );
   }
@@ -18,7 +15,7 @@ chrome.runtime.onMessage.addListener(function(request) {
   if (request.type === "LOG_WORK_IN_JIRA_DE") {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       chrome.tabs.executeScript(tabs[0].id, {
-        code: `(${logWork}('${request.payload.timeSpent}', '${request.payload.taskId}', '${request.payload.taskName}', '${request.payload.taskDesc}', 'de', '${request.payload.jiraPLTaskID}'))`
+        code: `(${logWork}('${request.payload.timeSpent}', '${request.payload.taskDesc}', '${request.payload.jiraPLTaskID}'))`
       });
     });
   }
@@ -32,7 +29,7 @@ chrome.runtime.onMessage.addListener(function(request) {
   }
 });
 
-function logWork(timeSpent, taskId, taskName, taskDesc, target, jiraPLTaskID, desc) {
+function logWork(timeSpent, taskDesc, jiraPLTaskID) {
   const getElements = () => {
     return {
       logWorkDialogTrigger: document.querySelector("#log-work"),
@@ -42,9 +39,7 @@ function logWork(timeSpent, taskId, taskName, taskDesc, target, jiraPLTaskID, de
       submitBtn: document.querySelector("#log-work-submit")
     };
   };
-
-
-
+  
   const waitForLogWorkDialogOpen = () => {
     const TIMEOUT = 1000;
     const MAX_ATTEMPS = 60;
@@ -86,37 +81,16 @@ function logWork(timeSpent, taskId, taskName, taskDesc, target, jiraPLTaskID, de
 
       document.title = "filling log dialog";
       elements.timeSpentInput.value = timeSpent;
-      elements.workDescInput.innerText =
-        target === "de"
-          ? `${jiraPLTaskID}: ${taskDesc.replace(/&quot;/g, "'")}`
-          : `${taskId}, ${taskName}, ${taskId}, ${taskDesc.replace(/&quot;/g, "'")}! ${desc}`;
+      elements.workDescInput.innerText =`${jiraPLTaskID}: ${taskDesc.replace(/&quot;/g, "'")}`;
 
       elements.submitBtn.click();
 
-      if (
-        target === "pl" &&
-        jiraPLTaskID !== "MAZ-1" &&
-        jiraPLTaskID !== "MAZ-14"
-      ) {
-   logWorkInJiraDe();
-      }
     } catch (error) {
       showAlert("Something went wrong", error);
     }
   }
 
-  const logWorkInJiraDe = () => {
-    chrome.runtime.sendMessage({
-      type: "LOG_WORK_IN_JIRA_DE",
-      payload: {
-        timeSpent,
-        taskId,
-        taskName,
-        taskDesc,
-        jiraPLTaskID
-      }
-    });
-  };
+
 
   const showAlert = msg => {
     chrome.runtime.sendMessage({

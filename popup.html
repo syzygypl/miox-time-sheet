@@ -14,10 +14,6 @@
         padding-bottom: 10px;
       }
 
-      .extension__element--work-desc:hover .templates {
-        display: block;
-      }
-
       .extension__element-label {
         font-weight: 700;
         text-transform: uppercase;
@@ -62,29 +58,10 @@
         cursor: pointer;
       }
 
-      .templates {
-        display: none;
-      }
-
-      .templates button {
-        border: none;
-        background-color: lightgray;
-        border-radius: 3px;
-        padding: 3px 5px;
-        font-size: 12px;
-        margin-bottom: 3px;
-        cursor: pointer;
-        transition: opacity 0.3s;
-      }
-
-      .templates button:hover {
-        opacity: 0.7;
-      }
-
       .version {
         padding: 5px;
         text-align: center;
-        background-color: red;
+        background-color: green;
         color: #fff;
         font-size: 18px;
         margin-bottom: 15px;
@@ -92,8 +69,20 @@
     </style>
   </head>
   <body>
-    <section class="extension">
-      <div class="version">version 5.0</div>
+    <form class="extension">
+      <div class="version">version 6.0</div>
+
+      <div class="extension__element extension__element--work-desc">
+        <label for="work-desc" class="extension__element-label"
+          >description:</label
+        >
+        <input
+          id="work-desc"
+          class="extention__element-field"
+          type="text"
+        />
+      </div>
+
       <div class="extension__element">
         <label for="time-spent-h" class="extension__element-label">time:</label>
 
@@ -129,30 +118,14 @@
         <select id="jira-pl-task-id" class="extention__element-field">
         </select>
       </div>
-
-      <div class="extension__element extension__element--work-desc">
-        <label for="work-desc" class="extension__element-label"
-          >description:</label
-        >
-        <textarea
-          id="work-desc"
-          class="extention__element-field"
-          type="text"
-        ></textarea>
-        <div class="templates" id="desc-templates">
-          <button>project planning</button>
-          <button>daily</button>
-          <button>tasks overview</button>
-        </div>
-      </div>
-
       <button
+      type="submit"
         id="submit"
         class="extention__element-field extention__element-field--submit"
       >
         Submit</button
       ><br />
-    </section>
+    </form>
     <script src="extensionDialog.js"></script>
     <script src="popup.js"></script>
   </body>

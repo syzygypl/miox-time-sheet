@@ -1,6 +1,6 @@
 {
   "name": "Time Log",
-  "version": "3.0",
+  "version": "6.0",
   "description": "Timesheet automation",
   "permissions": ["tabs", "activeTab", "declarativeContent", "storage",
     "notifications",
