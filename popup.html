@@ -14,6 +14,12 @@
         padding-bottom: 10px;
       }
 
+      .extension__submit {
+        display: flex;
+        gap: 10px;
+        padding-bottom: 0px;
+      }
+
       .extension__element-label {
         font-weight: 700;
         text-transform: uppercase;
@@ -34,6 +40,16 @@
         text-align: center;
         text-transform: uppercase;
         background-color: #0747a6;
+        font-weight: 700;
+        cursor: pointer;
+        color: #ffffff;
+        transition: opacity 0.3s;
+      }
+
+      .extention__element-field--submit-qa {
+        text-align: center;
+        text-transform: uppercase;
+        background-color: #841179;
         font-weight: 700;
         cursor: pointer;
         color: #ffffff;
@@ -109,22 +125,30 @@
       </div>
 
       <div class="extension__element">
-
         <label for="jira-pl-task-id" class="extension__element-label">
           project:
         </label>
 
-
         <select id="jira-pl-task-id" class="extention__element-field">
         </select>
       </div>
+
+      <div class="extension__submit">
       <button
       type="submit"
         id="submit"
         class="extention__element-field extention__element-field--submit"
       >
-        Submit</button
-      ><br />
+        Submit</button>
+        
+        <button
+        type="submit"
+          id="submit-qa"
+          class="extention__element-field extention__element-field--submit-qa"
+        >
+          Submit as QA</button>
+
+          </div>
     </form>
     <script src="extensionDialog.js"></script>
     <script src="popup.js"></script>

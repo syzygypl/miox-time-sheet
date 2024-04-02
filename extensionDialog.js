@@ -6,12 +6,13 @@ const extensionDialog = () => {
     timeSpentMinutes: document.querySelector("#time-spent-m"),
     workDesc: document.querySelector("#work-desc"),
     submit: document.querySelector("#submit"),
+    submitQA: document.querySelector("#submit-qa"),
     jiraPlTaskId: document.querySelector("#jira-pl-task-id"),
   };
 
   const PROJECTS_SOURCE = 'https://raw.githubusercontent.com/syzygypl/miox-time-sheet/master/projects.json';
 
-  const onSubmit = function(extension_time, extension_desc, jiraPLTaskID) {
+  const onSubmit = function(extension_time, extension_desc, jiraPLTaskID, qa) {
     const taskId = document
       .querySelector("meta[name='ajs-issue-key']")
       .getAttribute("content");
@@ -21,15 +22,17 @@ const extensionDialog = () => {
 
     chrome.storage.sync.set({[taskId]: jiraPLTaskID});
 
-    chrome.runtime.sendMessage({
-      type: "LOG_WORK_IN_JIRA_DE",
-      payload: {
-        timeSpent: extension_time,
-        taskDesc: extension_desc,
-        jiraPLTaskID
-      }
-    });
-
+    if (!qa) {
+      chrome.runtime.sendMessage({
+        type: "LOG_WORK_IN_JIRA_DE",
+        payload: {
+          timeSpent: extension_time,
+          taskDesc: extension_desc,
+          jiraPLTaskID
+        }
+      });
+    }
+ 
     chrome.runtime.sendMessage({
       type: "OPEN_JIRA_PL",
       payload: {
@@ -72,6 +75,18 @@ const extensionDialog = () => {
         });
       });
     });
+
+    selectors.submitQA.addEventListener("click", function() {
+      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        const timeSpent = `${selectors.timeSpentHours.value} ${selectors.timeSpentMinutes.value}`;
+        const workDesc = selectors.workDesc.value.replace(/'/g, "&quot;");
+ 
+        chrome.tabs.executeScript(tabs[0].id, {
+          code: `(${onSubmit}('${timeSpent}', '${workDesc}', '${selectors.jiraPlTaskId.value}', 'qa'))`
+        });
+      });
+    });
+
   };
 
   fetchAndUpdateProjects().then(() => {
