@@ -1,17 +1,6 @@
 "use strict";
 
 chrome.runtime.onMessage.addListener(function(request) {
-  if (request.type === "OPEN_JIRA_PL") {
-    chrome.tabs.create(
-      {
-        url: `https://jirasyzygy.atlassian.net/browse/${request.payload.jiraPLTaskID}`,
-        active: false
-      },
-      function(tab) {
-      }
-    );
-  }
-
   if (request.type === "LOG_WORK_IN_JIRA_DE") {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       chrome.tabs.executeScript(tabs[0].id, {

@@ -10,17 +10,28 @@ const extensionDialog = () => {
     jiraPlTaskId: document.querySelector("#jira-pl-task-id"),
   };
 
-  const PROJECTS_SOURCE = 'https://raw.githubusercontent.com/syzygypl/miox-time-sheet/master/projects.json';
+  const PROJECTS_SOURCE =
+    "https://raw.githubusercontent.com/syzygypl/miox-time-sheet/master/projects.json";
 
-  const onSubmit = function(extension_time, extension_desc, jiraPLTaskID, qa) {
+  const onSubmit = function (extension_time, extension_desc, jiraPLTaskID, qa) {
     const taskId = document
       .querySelector("meta[name='ajs-issue-key']")
       .getAttribute("content");
-    const taskName = document.querySelector("#summary-val").innerText.replace(/'/g, "&#39;");
+    const taskName = document
+      .querySelector("#summary-val")
+      .innerText.replace(/'/g, "&#39;");
 
-    prompt('worklog', `${taskId}, ${taskName}, ${taskId}, ${extension_desc.replace(/&quot;/g, "'")}`);
+    prompt(
+      `https://jirasyzygy.atlassian.net/browse/${jiraPLTaskID}`,
+      `${taskId}, ${taskName}, ${taskId}, ${extension_desc.replace(
+        /&quot;/g,
+        "'"
+      )}`
+    );
 
-    chrome.storage.sync.set({[taskId]: jiraPLTaskID});
+    window.open(`https://jirasyzygy.atlassian.net/browse/${jiraPLTaskID}`, "_blank", "popup,width=700,height=800");
+
+    chrome.storage.sync.set({ [taskId]: jiraPLTaskID });
 
     if (!qa) {
       chrome.runtime.sendMessage({
@@ -28,65 +39,58 @@ const extensionDialog = () => {
         payload: {
           timeSpent: extension_time,
           taskDesc: extension_desc,
-          jiraPLTaskID
-        }
+          jiraPLTaskID,
+        },
       });
     }
- 
-    chrome.runtime.sendMessage({
-      type: "OPEN_JIRA_PL",
-      payload: {
-        jiraPLTaskID,
-      }
-    });
   };
 
   const fetchAndUpdateProjects = () => {
-    return fetch(PROJECTS_SOURCE).then(response => response.json())
-      .then(data => {
-        const projects = data.projects.map(project => {
+    return fetch(PROJECTS_SOURCE)
+      .then((response) => response.json())
+      .then((data) => {
+        const projects = data.projects.map((project) => {
           return `<option value="${project.task}">${project.name}</option>`;
         });
 
-        selectors.jiraPlTaskId.innerHTML = projects.join('');
+        selectors.jiraPlTaskId.innerHTML = projects.join("");
       });
-  }
+  };
 
   const memoJiraPlTaskId = () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       const taskId = tabs[0].url.split("/").slice(-1)[0];
 
-      chrome.storage.sync.get(taskId, function(result) {
+      chrome.storage.sync.get(taskId, function (result) {
         if (result[taskId]) {
           selectors.jiraPlTaskId.value = result[taskId];
         }
       });
     });
-  }
+  };
 
   const events = () => {
-    selectors.submit.addEventListener("click", function() {
-      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    selectors.submit.addEventListener("click", function () {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         const timeSpent = `${selectors.timeSpentHours.value} ${selectors.timeSpentMinutes.value}`;
         const workDesc = selectors.workDesc.value.replace(/'/g, "&quot;");
- 
+
         chrome.tabs.executeScript(tabs[0].id, {
-          code: `(${onSubmit}('${timeSpent}', '${workDesc}', '${selectors.jiraPlTaskId.value}'))`
+          code: `(${onSubmit}('${timeSpent}', '${workDesc}', '${selectors.jiraPlTaskId.value}'))`,
         });
       });
     });
 
-    selectors.submitQA.addEventListener("click", function() {
-      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    selectors.submitQA.addEventListener("click", function () {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         const timeSpent = `${selectors.timeSpentHours.value} ${selectors.timeSpentMinutes.value}`;
         const workDesc = selectors.workDesc.value.replace(/'/g, "&quot;");
- 
+
         chrome.tabs.executeScript(tabs[0].id, {
-          code: `(${onSubmit}('${timeSpent}', '${workDesc}', '${selectors.jiraPlTaskId.value}', 'qa'))`
+          code: `(${onSubmit}('${timeSpent}', '${workDesc}', '${selectors.jiraPlTaskId.value}', 'qa'))`,
         });
       });
     });
-
   };
 
   fetchAndUpdateProjects().then(() => {
