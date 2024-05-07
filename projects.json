@@ -79,6 +79,10 @@
     {
       "name": "ELQ RTC",
       "task": "MAZER-1"
+    },
+    {
+      "name": "DWS",
+      "task": "MAZD-1"
     }
   ]
 }
