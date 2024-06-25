@@ -83,6 +83,14 @@
     {
       "name": "DWS",
       "task": "MAZD-1"
+    },
+    {
+      "name": "DiB Support",
+      "task": "MAZDS-1"
+    },
+    {
+      "name": "Owners Section Rework",
+      "task": "MAZOS-1"
     }
   ]
 }
