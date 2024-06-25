@@ -91,6 +91,10 @@
     {
       "name": "Owners Section Rework",
       "task": "MAZOS-1"
+    },
+    {
+      "name": "WCAG",
+      "task": "MAZW-1"
     }
   ]
 }
