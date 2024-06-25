@@ -21,16 +21,6 @@ const extensionDialog = () => {
       .querySelector("#summary-val")
       .innerText.replace(/'/g, "&#39;");
 
-    prompt(
-      `https://jirasyzygy.atlassian.net/browse/${jiraPLTaskID}`,
-      `${taskId}, ${taskName}, ${taskId}, ${extension_desc.replace(
-        /&quot;/g,
-        "'"
-      )}`
-    );
-
-    window.open(`https://jirasyzygy.atlassian.net/browse/${jiraPLTaskID}`, "_blank", "popup,width=700,height=800");
-
     chrome.storage.sync.set({ [taskId]: jiraPLTaskID });
 
     if (!qa) {
@@ -43,6 +33,22 @@ const extensionDialog = () => {
         },
       });
     }
+
+    setTimeout(() => {
+      prompt(
+        `https://jirasyzygy.atlassian.net/browse/${jiraPLTaskID}`,
+        `${taskId}, ${taskName}, ${taskId}, ${extension_desc.replace(
+          /&quot;/g,
+          "'"
+        )}`
+      );
+
+      window.open(
+        `https://jirasyzygy.atlassian.net/browse/${jiraPLTaskID}`,
+        "_blank",
+        "popup,width=700,height=800"
+      );
+    }, 1000);
   };
 
   const fetchAndUpdateProjects = () => {
@@ -75,8 +81,10 @@ const extensionDialog = () => {
         const timeSpent = `${selectors.timeSpentHours.value} ${selectors.timeSpentMinutes.value}`;
         const workDesc = selectors.workDesc.value.replace(/'/g, "&quot;");
 
-        chrome.tabs.executeScript(tabs[0].id, {
-          code: `(${onSubmit}('${timeSpent}', '${workDesc}', '${selectors.jiraPlTaskId.value}'))`,
+        chrome.scripting.executeScript({
+          target: { tabId: tabs[0].id },
+          func: onSubmit,
+          args: [timeSpent, workDesc, selectors.jiraPlTaskId.value]
         });
       });
     });
@@ -86,8 +94,10 @@ const extensionDialog = () => {
         const timeSpent = `${selectors.timeSpentHours.value} ${selectors.timeSpentMinutes.value}`;
         const workDesc = selectors.workDesc.value.replace(/'/g, "&quot;");
 
-        chrome.tabs.executeScript(tabs[0].id, {
-          code: `(${onSubmit}('${timeSpent}', '${workDesc}', '${selectors.jiraPlTaskId.value}', 'qa'))`,
+        chrome.scripting.executeScript({
+          target: { tabId: tabs[0].id },
+          func: onSubmit,
+          args: [timeSpent, workDesc, selectors.jiraPlTaskId.value, 'qa']
         });
       });
     });

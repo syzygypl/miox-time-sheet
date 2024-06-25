@@ -3,16 +3,20 @@
 chrome.runtime.onMessage.addListener(function(request) {
   if (request.type === "LOG_WORK_IN_JIRA_DE") {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      chrome.tabs.executeScript(tabs[0].id, {
-        code: `(${logWork}('${request.payload.timeSpent}', '${request.payload.taskDesc}', '${request.payload.jiraPLTaskID}'))`
+      chrome.scripting.executeScript({
+        target: { tabId: tabs[0].id },
+        func: logWork,
+        args: [request.payload.timeSpent, request.payload.taskDesc, request.payload.jiraPLTaskID]
       });
     });
   }
 
   if (request.type === "ALERT") {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      chrome.tabs.executeScript(tabs[0].id, {
-        code: `alert("${request.payload.msg}")`
+      chrome.scripting.executeScript({
+        target: { tabId: tabs[0].id },
+        func: (msg) => alert(msg),
+        args: [request.payload.msg]
       });
     });
   }
@@ -22,13 +26,12 @@ function logWork(timeSpent, taskDesc, jiraPLTaskID) {
   const getElements = () => {
     return {
       logWorkDialogTrigger: document.querySelector("#log-work"),
-
       timeSpentInput: document.querySelector("#log-work-time-logged"),
       workDescInput: document.querySelector(".jira-dialog-content textarea"),
       submitBtn: document.querySelector("#log-work-submit")
     };
   };
-  
+
   const waitForLogWorkDialogOpen = () => {
     const TIMEOUT = 1000;
     const MAX_ATTEMPS = 60;
@@ -62,7 +65,6 @@ function logWork(timeSpent, taskDesc, jiraPLTaskID) {
     });
   };
 
-
   async function submit() {
     try {
       await waitForLogWorkDialogOpen();
@@ -78,8 +80,6 @@ function logWork(timeSpent, taskDesc, jiraPLTaskID) {
       showAlert("Something went wrong", error);
     }
   }
-
-
 
   const showAlert = msg => {
     chrome.runtime.sendMessage({
