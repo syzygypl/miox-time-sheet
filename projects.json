@@ -1,12 +1,12 @@
 {
   "projects": [
     {
-      "name": "Maintenance & Bugfixing",
-      "task": "MAZMB-1"
+      "name": "Technical Maintenance and Support",
+      "task": "MAZTMS-1"
     },
     {
-      "name": "PLM Continuous Improvement",
-      "task": "MAZPLMCI-1"
+      "name": "CX Web Centralization",
+      "task": "MAZCXWC-1"
     },
     {
       "name": "PLM Platform Management",
@@ -67,10 +67,6 @@
     {
       "name": "HomePage Rework",
       "task": "MAZPLMCI-2"
-    },
-    {
-      "name": "Platform Intelligence",
-      "task": "MAZPI-1"
     },
     {
       "name": "Online Service Booking",
