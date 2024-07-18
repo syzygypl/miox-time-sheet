@@ -91,6 +91,10 @@
     {
       "name": "WCAG",
       "task": "MAZW-1"
+    },
+    {
+      "name": "SOH",
+      "task": "MAZCXWC-6"
     }
   ]
 }
