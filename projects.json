@@ -93,8 +93,8 @@
       "task": "MAZW-1"
     },
     {
-      "name": "SOH",
-      "task": "MAZCXWC-6"
+      "name": "State of Health",
+      "task": "MAZSH-1"
     }
   ]
 }
