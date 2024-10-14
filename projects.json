@@ -95,6 +95,14 @@
     {
       "name": "State of Health",
       "task": "MAZSH-1"
+    },
+    {
+      "name": "M2H Map Update",
+      "task": "MAZMMU-1"
+    },
+    {
+      "name": "Dynamic Yield Discovery",
+      "task": "MAZDYD-1"
     }
   ]
 }
