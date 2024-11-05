@@ -41,20 +41,8 @@
       "task": "MAZPLMCI-4"
     },
     {
-      "name": "MX 30 Showroom",
-      "task": "MAZMX30SR-1"
-    },
-    {
-      "name": "MX 30 extended comparison module",
-      "task": "MAZPLMCI-3"
-    },
-    {
       "name": "TCMR/Finance Renewal Page",
       "task": "MAZTCMR-1"
-    },
-    {
-      "name": "SUV Range Page - Comparison Table",
-      "task": "MAZPLMCI-5"
     },
     {
       "name": "MIOX SLA",
@@ -63,10 +51,6 @@
     {
       "name": "GA4 Implementation",
       "task": "MAZGA4I-1"
-    },
-    {
-      "name": "HomePage Rework",
-      "task": "MAZPLMCI-2"
     },
     {
       "name": "Online Service Booking",
