@@ -87,6 +87,10 @@
     {
       "name": "Dynamic Yield Discovery",
       "task": "MAZDYD-1"
+    },
+    {
+      "name": "MMB Indicata / Autorola Trade-In",
+      "task": "MAZMIATI-1"
     }
   ]
 }
