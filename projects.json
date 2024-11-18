@@ -91,6 +91,10 @@
     {
       "name": "MMB Indicata / Autorola Trade-In",
       "task": "MAZMIATI-1"
+    },
+    {
+      "name": "Connectivity Integration",
+      "task": "MAZCI-1"
     }
   ]
 }
