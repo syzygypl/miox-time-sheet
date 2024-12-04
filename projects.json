@@ -93,6 +93,14 @@
       "task": "MAZMIATI-1"
     },
     {
+      "name": "Standalone Finance Calculator",
+      "task": "MAZFC-2"
+    },
+    {
+      "name": "iPaaS Migration",
+      "task": "MAZIM-1"
+    },
+    {
       "name": "Connectivity Integration",
       "task": "MAZCI-1"
     }
