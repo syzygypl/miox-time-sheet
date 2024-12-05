@@ -101,6 +101,10 @@
       "task": "MAZIM-1"
     },
     {
+      "name": "Design System Code",
+      "task": "MAZDSC-1"
+    },
+    {
       "name": "Connectivity Integration",
       "task": "MAZCI-1"
     }
