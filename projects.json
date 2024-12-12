@@ -102,6 +102,10 @@
     },
     {
       "name": "Design System Code",
+      "task": "MAZMSE-1"
+    },
+    {
+      "name": "Mazda Stories Enhancements",
       "task": "MAZDSC-1"
     },
     {
