@@ -29,20 +29,8 @@
       "task": "MAZIHG-1"
     },
     {
-      "name": "OneTrust cookies",
-      "task": "MAZOTC-1"
-    },
-    {
-      "name": "Maxymiser",
-      "task": "MAZMAX-1"
-    },
-    {
       "name": "Forms enhancement",
       "task": "MAZPLMCI-4"
-    },
-    {
-      "name": "TCMR/Finance Renewal Page",
-      "task": "MAZTCMR-1"
     },
     {
       "name": "MIOX SLA",
@@ -51,14 +39,6 @@
     {
       "name": "GA4 Implementation",
       "task": "MAZGA4I-1"
-    },
-    {
-      "name": "Online Service Booking",
-      "task": "MAZOSBU-1"
-    },
-    {
-      "name": "ELQ RTC",
-      "task": "MAZER-1"
     },
     {
       "name": "DWS",
@@ -75,10 +55,6 @@
     {
       "name": "WCAG",
       "task": "MAZW-1"
-    },
-    {
-      "name": "State of Health",
-      "task": "MAZSH-1"
     },
     {
       "name": "M2H Map Update",
