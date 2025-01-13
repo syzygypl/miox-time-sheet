@@ -78,11 +78,11 @@
     },
     {
       "name": "Design System Code",
-      "task": "MAZMSE-1"
+      "task": "MAZDSC-1"
     },
     {
       "name": "Mazda Stories Enhancements",
-      "task": "MAZDSC-1"
+      "task": "MAZMSE-1"
     },
     {
       "name": "Connectivity Integration",
