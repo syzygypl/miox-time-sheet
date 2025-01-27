@@ -85,6 +85,10 @@
       "task": "MAZMSE-1"
     },
     {
+      "name": "Mazda J90 Showroom Improvements",
+      "task": "MAZMJSI-1"
+    },
+    {
       "name": "Connectivity Integration",
       "task": "MAZCI-1"
     }
