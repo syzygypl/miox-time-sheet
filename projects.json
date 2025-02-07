@@ -89,6 +89,10 @@
       "task": "MAZMJSI-1"
     },
     {
+      "name": "Homepage Enhancements",
+      "task": "MAZHE-1"
+    },
+    {
       "name": "Connectivity Integration",
       "task": "MAZCI-1"
     }
