@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="supabase-js.js"></script>
     <style>
       * {
         box-sizing: border-box;
@@ -77,26 +78,51 @@
       .version {
         padding: 5px;
         text-align: center;
-        background-color: rgb(0, 128, 113);
+        background-color: rgb(70, 168, 25);
         color: #fff;
         font-size: 18px;
         margin-bottom: 15px;
+      }
+
+      .progress {
+        width: 80%;
+        height: 30px;
+      }
+
+      .progress-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     </style>
   </head>
   <body>
     <form class="extension">
-      <div class="version">version 7.0</div>
+      <div class="version">version 8.0</div>
+
+      <div>
+        dev
+        <input type="hidden" id="progress-dev" />
+        <label class="progress-label">
+          <progress id="progress-bar-dev" class="progress"></progress>
+          <span id="label-dev">-</span>
+          - <input type="text" id="estimation-dev" style="width: 40px" />h
+        </label>
+
+        <!-- qa
+        <input type="hidden" id="progress-qa" />
+        <label class="progress-label">
+          <progress id="progress-bar-qa" class="progress"></progress>
+          <span id="label-qa">-</span>
+          - <input type="text" id="estimation-qa" style="width: 40px" />h
+        </label> -->
+      </div>
 
       <div class="extension__element extension__element--work-desc">
         <label for="work-desc" class="extension__element-label"
           >description:</label
         >
-        <input
-          id="work-desc"
-          class="extention__element-field"
-          type="text"
-        />
+        <input id="work-desc" class="extention__element-field" type="text" />
       </div>
 
       <div class="extension__element">
@@ -104,22 +130,20 @@
 
         <div class="time-select">
           <select id="time-spent-h" class="time-select__field">
-            <option value="0h">0h</option>
-            <option value="1h">1h</option>
-            <option value="2h">2h</option>
-            <option value="3h">3h</option>
-            <option value="4h">4h</option>
-            <option value="5h">5h</option>
-            <option value="6h">6h</option>
-            <option value="7h">7h</option>
-            <option value="8h">8h</option>
+            <option value="0">0h</option>
+            <option value="1">1h</option>
+            <option value="2">2h</option>
+            <option value="3">3h</option>
+            <option value="4">4h</option>
+            <option value="5">5h</option>
+            <option value="6">6h</option>
+            <option value="7">7h</option>
+            <option value="8">8h</option>
           </select>
 
           <select id="time-spent-m" class="time-select__field">
-            <option value="0m">0m</option>
-            <option value="15m">15m</option>
-            <option value="30m">30m</option>
-            <option value="45m">45m</option>
+            <option value="0">0m</option>
+            <option value="5">30m</option>
           </select>
         </div>
       </div>
@@ -129,26 +153,33 @@
           project:
         </label>
 
-        <select id="jira-pl-task-id" class="extention__element-field">
-        </select>
+        <select id="jira-pl-task-id" class="extention__element-field"></select>
       </div>
 
+      <!-- <label class="progress-label">
+      
+        <progress id="progress-bar-project" class="progress"></progress>
+        <span id="label-project">-</span>
+        - <input type="text" id="estimation-project" style="width: 40px"  />h
+      </label> -->
+
       <div class="extension__submit">
-      <button
-      type="submit"
-        id="submit"
-        class="extention__element-field extention__element-field--submit"
-      >
-        Submit</button>
-        
+        <button
+          type="submit"
+          id="submit"
+          class="extention__element-field extention__element-field--submit"
+        >
+          Submit
+        </button>
+
         <button
         type="submit"
-          id="submit-qa"
-          class="extention__element-field extention__element-field--submit-qa"
-        >
-          Submit as QA</button>
-
-          </div>
+        id="submit-qa"
+        class="extention__element-field extention__element-field--submit-qa"
+      >
+        Submit as QA
+      </button>
+      </div>
     </form>
     <script src="extensionDialog.js"></script>
     <script src="popup.js"></script>
