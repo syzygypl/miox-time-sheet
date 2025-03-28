@@ -84,8 +84,13 @@
         margin-bottom: 15px;
       }
 
-      .progress {
+      .progress-wrapper {
         width: 80%;
+        position: relative;
+      }
+
+      .progress {
+        width: 100%;
         height: 30px;
       }
 
@@ -93,6 +98,38 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-bottom: 20px;
+      }
+
+      .indicator {
+        position: absolute;
+        transform: translateX(-50%);
+        top: 0;
+        
+        font-size: 10px;
+        padding-top: 35px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 50%;
+          width: 1px;
+          height: 30px;
+          border-left: 1px solid #000;
+        }
+      }
+
+      .indicator--contract {
+        left: 10%;
+      }
+
+      .indicator--cr {
+        left: 60%;
+      }
+
+      .indicator--qa {
+        left: 80%;
       }
     </style>
   </head>
@@ -104,7 +141,15 @@
         dev
         <input type="hidden" id="progress-dev" />
         <label class="progress-label">
-          <progress id="progress-bar-dev" class="progress"></progress>
+          
+          <!-- <span>CR</span> -->
+           <div class="progress-wrapper">
+            <span class="indicator indicator--contract">Contract</span>
+            <span class="indicator indicator--cr">CR</span>
+            <span class="indicator indicator--qa">QA</span>
+            <progress id="progress-bar-dev" class="progress"></progress>
+           </div>
+
           <span id="label-dev">-</span>
           - <input type="text" id="estimation-dev" style="width: 40px" />h
         </label>
