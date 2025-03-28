@@ -44,15 +44,8 @@ const extensionDialog = async () => {
 
     progressDev: document.querySelector("#progress-dev"),
     progressBarDev: document.querySelector("#progress-bar-dev"),
-
     estimationDev: document.querySelector("#estimation-dev"),
-    estimationQa: document.querySelector("#estimation-qa"),
-
-    progressQa: document.querySelector("#progress-qa"),
-    progressBarQa: document.querySelector("#progress-bar-qa"),
-
     labelDev: document.querySelector("#label-dev"),
-    labelQa: document.querySelector("#label-qa"),
   };
 
   const jiraUrl = await getCurrentTabUrl();
@@ -80,24 +73,12 @@ const extensionDialog = async () => {
       selectors.progressBarDev.setAttribute("value", data.logged_dev || 0);
       selectors.progressBarDev.setAttribute("max", data.estimation_dev);
       selectors.labelDev.innerText = `${data.logged_dev || 0}h`;
-
-      // selectors.progressQa.setAttribute("value", data.logged_qa || 0);
-      // selectors.estimationQa.setAttribute("value", data.estimation_qa || 0);
-      // selectors.progressBarQa.setAttribute("value", data.logged_qa || 0);
-      // selectors.progressBarQa.setAttribute("max", data.estimation_qa);
-      // selectors.labelQa.innerText = `${data.logged_qa || 0}h`;
     } else {
       selectors.progressDev.setAttribute("value", 0);
       selectors.estimationDev.setAttribute("value", 0);
       selectors.progressBarDev.setAttribute("value", 0);
       selectors.progressBarDev.setAttribute("max", 0);
       selectors.labelDev.innerText = `0h`;
-
-      // selectors.progressQa.setAttribute("value", 0);
-      // selectors.estimationQa.setAttribute("value", 0);
-      // selectors.progressBarQa.setAttribute("value", 0);
-      // selectors.progressBarQa.setAttribute("max", 0);
-      // selectors.labelQa.innerText = `0h`;
     }
 
     selectors.timeSpentHours.addEventListener("change", function (e) {
