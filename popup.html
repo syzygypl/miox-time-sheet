@@ -45,6 +45,11 @@
         cursor: pointer;
         color: #ffffff;
         transition: opacity 0.3s;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
       }
 
       .extention__element-field--submit-qa {
@@ -105,7 +110,7 @@
         position: absolute;
         transform: translateX(-50%);
         top: 0;
-        
+
         font-size: 10px;
         padding-top: 35px;
 
@@ -141,15 +146,21 @@
         dev
         <input type="hidden" id="progress-dev" />
         <label class="progress-label">
-           <div class="progress-wrapper">
+          <div class="progress-wrapper">
             <span class="indicator indicator--contract">Contract</span>
             <span class="indicator indicator--cr">CR</span>
             <span class="indicator indicator--qa">QA</span>
             <progress id="progress-bar-dev" class="progress"></progress>
-           </div>
+          </div>
 
           <span id="label-dev">-</span>
-          - <input type="text" id="estimation-dev" style="width: 40px" />h
+          -
+          <input
+            type="text"
+            id="estimation-dev"
+            style="width: 40px"
+            value="0"
+          />h
         </label>
       </div>
 
@@ -201,12 +212,12 @@
         </button>
 
         <button
-        type="submit"
-        id="submit-qa"
-        class="extention__element-field extention__element-field--submit-qa"
-      >
-        Submit as QA
-      </button>
+          type="submit"
+          id="submit-qa"
+          class="extention__element-field extention__element-field--submit-qa"
+        >
+          Submit as QA
+        </button>
       </div>
     </form>
     <script src="extensionDialog.js"></script>

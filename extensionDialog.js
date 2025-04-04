@@ -8,12 +8,11 @@ const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_API_KEY);
 
 const checkIsQa = () => {
   return new Promise((resolve, reject) => {
-    chrome.storage.sync.get(['qa'], (result) => {
+    chrome.storage.sync.get(["qa"], (result) => {
       resolve(result.qa || false);
     });
   });
 };
-
 
 const getCurrentTabUrl = () => {
   return new Promise((resolve, reject) => {
@@ -53,9 +52,9 @@ const extensionDialog = async () => {
 
   if (isQa) {
     selectors.submit.style.display = "none";
-    selectors.estimationDev.setAttribute('disabled', true);
-    selectors.timeSpentHours.setAttribute('disabled', true);
-    selectors.timeSpentMinutes.setAttribute('disabled', true);
+    selectors.estimationDev.setAttribute("disabled", true);
+    selectors.timeSpentHours.setAttribute("disabled", true);
+    selectors.timeSpentMinutes.setAttribute("disabled", true);
   } else {
     selectors.submitQa.style.display = "none";
   }
@@ -86,6 +85,16 @@ const extensionDialog = async () => {
       const progressDevValue = parseFloat(
         selectors.progressDev.getAttribute("value")
       );
+      const estimationDev = selectors.estimationDev.value;
+      
+
+      if (selectorValue > 2 && parseFloat(estimationDev) === 0) {
+        selectors.submit.setAttribute("disabled", true);
+        alert("You need to add estimation first. Make sure it's also added to task comment");
+      } else {
+        selectors.submit.removeAttribute("disabled");
+      }
+
 
       selectors.progressBarDev.setAttribute(
         "value",
@@ -106,6 +115,8 @@ const extensionDialog = async () => {
     selectors.estimationDev.addEventListener("blur", async function (e) {
       const inputValue = parseFloat(e.currentTarget.value);
       selectors.progressBarDev.setAttribute("max", inputValue);
+
+      selectors.submit.removeAttribute("disabled");
 
       if (data) {
         await supabase
