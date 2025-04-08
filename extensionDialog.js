@@ -55,6 +55,7 @@ const extensionDialog = async () => {
     selectors.estimationDev.setAttribute("disabled", true);
     selectors.timeSpentHours.setAttribute("disabled", true);
     selectors.timeSpentMinutes.setAttribute("disabled", true);
+    selectors.submit.removeAttribute("disabled");
   } else {
     selectors.submitQa.style.display = "none";
   }
@@ -65,6 +66,7 @@ const extensionDialog = async () => {
       .select("*")
       .eq("task", jiraUrl)
       .single();
+
 
     if (data) {
       selectors.progressDev.setAttribute("value", data.logged_dev || 0);
@@ -108,6 +110,8 @@ const extensionDialog = async () => {
       const progressValue = parseFloat(
         selectors.progressBarDev.getAttribute("value")
       );
+
+      selectors.submit.removeAttribute("disabled");
 
       selectors.labelDev.innerText = `${progressValue + selectorValue}h`;
     });
