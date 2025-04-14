@@ -64,16 +64,14 @@ const extensionDialog = async () => {
     const { data, error } = await supabase
       .from("worklogs")
       .select("*")
-      .eq("task", jiraUrl)
-      .single();
-
-
-    if (data) {
-      selectors.progressDev.setAttribute("value", data.logged_dev || 0);
-      selectors.estimationDev.setAttribute("value", data.estimation_dev || 0);
-      selectors.progressBarDev.setAttribute("value", data.logged_dev || 0);
-      selectors.progressBarDev.setAttribute("max", data.estimation_dev);
-      selectors.labelDev.innerText = `${data.logged_dev || 0}h`;
+      .eq("task", jiraUrl);
+      const worklogData = data[0];
+    if (worklogData) {
+      selectors.progressDev.setAttribute("value", worklogData.logged_dev || 0);
+      selectors.estimationDev.setAttribute("value", worklogData.estimation_dev || 0);
+      selectors.progressBarDev.setAttribute("value", worklogData.logged_dev || 0);
+      selectors.progressBarDev.setAttribute("max", worklogData.estimation_dev);
+      selectors.labelDev.innerText = `${worklogData.logged_dev || 0}h`;
     } else {
       selectors.progressDev.setAttribute("value", 0);
       selectors.estimationDev.setAttribute("value", 0);
@@ -122,7 +120,7 @@ const extensionDialog = async () => {
 
       selectors.submit.removeAttribute("disabled");
 
-      if (data) {
+      if (worklogData) {
         await supabase
           .from("worklogs")
           .update({ estimation_dev: inputValue })
@@ -138,7 +136,7 @@ const extensionDialog = async () => {
   }
 
   const PROJECTS_SOURCE =
-    "https://raw.githubusercontent.com/syzygypl/miox-time-sheet/master/projects.json";
+    "https://raw.githubusercontent.com/syzygypl/miox-time-sheet/master/projects-map.json";
 
   const onSubmit = function (extension_desc, jiraPLTaskID) {
     const taskId = document
