@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="supabase-js.js"></script>
     <style>
       * {
         box-sizing: border-box;
@@ -44,6 +45,11 @@
         cursor: pointer;
         color: #ffffff;
         transition: opacity 0.3s;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
       }
 
       .extention__element-field--submit-qa {
@@ -77,26 +83,92 @@
       .version {
         padding: 5px;
         text-align: center;
-        background-color: rgb(0, 128, 113);
+        background-color: rgb(70, 168, 25);
         color: #fff;
         font-size: 18px;
         margin-bottom: 15px;
+      }
+
+      .progress-wrapper {
+        width: 80%;
+        position: relative;
+      }
+
+      .progress {
+        width: 100%;
+        height: 30px;
+      }
+
+      .progress-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+      }
+
+      .indicator {
+        position: absolute;
+        transform: translateX(-50%);
+        top: 0;
+
+        font-size: 10px;
+        padding-top: 35px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 50%;
+          width: 1px;
+          height: 30px;
+          border-left: 1px solid #000;
+        }
+      }
+
+      .indicator--contract {
+        left: 10%;
+      }
+
+      .indicator--cr {
+        left: 60%;
+      }
+
+      .indicator--qa {
+        left: 80%;
       }
     </style>
   </head>
   <body>
     <form class="extension">
-      <div class="version">version 7.0</div>
+      <div class="version">version 8.0</div>
+
+      <div>
+        dev
+        <input type="hidden" id="progress-dev" />
+        <label class="progress-label">
+          <div class="progress-wrapper">
+            <span class="indicator indicator--contract">Contract</span>
+            <span class="indicator indicator--cr">CR</span>
+            <span class="indicator indicator--qa">QA</span>
+            <progress id="progress-bar-dev" class="progress"></progress>
+          </div>
+
+          <span id="label-dev">-</span>
+          -
+          <input
+            type="text"
+            id="estimation-dev"
+            style="width: 40px"
+            value="0"
+          />h
+        </label>
+      </div>
 
       <div class="extension__element extension__element--work-desc">
         <label for="work-desc" class="extension__element-label"
           >description:</label
         >
-        <input
-          id="work-desc"
-          class="extention__element-field"
-          type="text"
-        />
+        <input id="work-desc" class="extention__element-field" type="text" />
       </div>
 
       <div class="extension__element">
@@ -104,22 +176,20 @@
 
         <div class="time-select">
           <select id="time-spent-h" class="time-select__field">
-            <option value="0h">0h</option>
-            <option value="1h">1h</option>
-            <option value="2h">2h</option>
-            <option value="3h">3h</option>
-            <option value="4h">4h</option>
-            <option value="5h">5h</option>
-            <option value="6h">6h</option>
-            <option value="7h">7h</option>
-            <option value="8h">8h</option>
+            <option value="0">0h</option>
+            <option value="1">1h</option>
+            <option value="2">2h</option>
+            <option value="3">3h</option>
+            <option value="4">4h</option>
+            <option value="5">5h</option>
+            <option value="6">6h</option>
+            <option value="7">7h</option>
+            <option value="8">8h</option>
           </select>
 
           <select id="time-spent-m" class="time-select__field">
-            <option value="0m">0m</option>
-            <option value="15m">15m</option>
-            <option value="30m">30m</option>
-            <option value="45m">45m</option>
+            <option value="0">0m</option>
+            <option value="5">30m</option>
           </select>
         </div>
       </div>
@@ -129,26 +199,27 @@
           project:
         </label>
 
-        <select id="jira-pl-task-id" class="extention__element-field">
-        </select>
+        <select id="jira-pl-task-id" class="extention__element-field"></select>
       </div>
 
       <div class="extension__submit">
-      <button
-      type="submit"
-        id="submit"
-        class="extention__element-field extention__element-field--submit"
-      >
-        Submit</button>
-        
         <button
-        type="submit"
+          type="submit"
+          id="submit"
+          disabled
+          class="extention__element-field extention__element-field--submit"
+        >
+          Submit
+        </button>
+
+        <button
+          type="submit"
           id="submit-qa"
           class="extention__element-field extention__element-field--submit-qa"
         >
-          Submit as QA</button>
-
-          </div>
+          Submit as QA
+        </button>
+      </div>
     </form>
     <script src="extensionDialog.js"></script>
     <script src="popup.js"></script>

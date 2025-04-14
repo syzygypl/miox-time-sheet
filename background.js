@@ -5,10 +5,6 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({color: '#3aa757'}, () => {
-    console.log('The color is green.');
-  });
-
   chrome.action.disable();
 
   chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
