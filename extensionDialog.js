@@ -151,7 +151,7 @@ const extensionDialog = async () => {
     setTimeout(() => {
       prompt(
         `https://jirasyzygy.atlassian.net/browse/${jiraPLTaskID}`,
-        `${taskId}, ${taskName}, ${taskId}, ${extension_desc.replace(
+        `${taskId}, ${taskName}: ${extension_desc.replace(
           /&quot;/g,
           "'"
         )}`
