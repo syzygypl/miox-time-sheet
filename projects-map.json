@@ -99,6 +99,10 @@
     {
       "name": "Siebel2Salesforce",
       "task": "MAZS2S-1"
+    },
+    {
+      "name": "Landing Pages",
+      "task": "MAZLP-1"
     }
   ]
 }
