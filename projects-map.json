@@ -2,75 +2,107 @@
   "projects": [
     {
       "name": "Technical Maintenance and Support",
-      "task": "MAZDA-1"
-    },
-    {
-      "name": "MIOX SLA",
-      "task": "MAZDA-19"
+      "task": "MAZTMS-1"
     },
     {
       "name": "CX Web Centralization",
-      "task": "MAZDA-2"
+      "task": "MAZCXWC-1"
     },
     {
       "name": "PLM Platform Management",
-      "task": "MAZDA-3"
+      "task": "MAZPLMPM-1"
+    },
+    {
+      "name": "CCE",
+      "task": "MAZCCE-1"
     },
     {
       "name": "General technical improvements",
-      "task": "MAZDA-17"
+      "task": "MAZGTI-1"
     },
     {
-      "name": "Standalone Finance Calculator",
-      "task": "MAZDA-5"
+      "name": "Finance Calculator",
+      "task": "MAZFC-1"
+    },
+    {
+      "name": "Intern HG",
+      "task": "MAZIHG-1"
+    },
+    {
+      "name": "Forms enhancement",
+      "task": "MAZPLMCI-4"
+    },
+    {
+      "name": "MIOX SLA",
+      "task": "MAZMSLA-1"
+    },
+    {
+      "name": "GA4 Implementation",
+      "task": "MAZGA4I-1"
     },
     {
       "name": "DWS",
-      "task": "MAZDA-6"
+      "task": "MAZD-1"
+    },
+    {
+      "name": "DiB Support",
+      "task": "MAZDS-1"
+    },
+    {
+      "name": "Owners Section Rework",
+      "task": "MAZOS-1"
     },
     {
       "name": "WCAG",
-      "task": "MAZDA-7"
+      "task": "MAZW-1"
     },
     {
       "name": "M2H Map Update",
-      "task": "MAZDA-8"
+      "task": "MAZMMU-1"
     },
     {
       "name": "Dynamic Yield Discovery",
-      "task": "MAZDA-9"
+      "task": "MAZDYD-1"
+    },
+    {
+      "name": "MMB Indicata / Autorola Trade-In",
+      "task": "MAZMIATI-1"
+    },
+    {
+      "name": "Standalone Finance Calculator",
+      "task": "MAZFC-2"
     },
     {
       "name": "iPaaS Migration",
-      "task": "MAZDA-10"
+      "task": "MAZIM-1"
     },
     {
       "name": "Design System Code",
-      "task": "MAZDA-11"
+      "task": "MAZDSC-1"
     },
     {
       "name": "Mazda Stories Enhancements",
-      "task": "MAZDA-12"
+      "task": "MAZMSE-1"
     },
     {
       "name": "Mazda J90 Showroom Improvements",
-      "task": "MAZDA-13"
+      "task": "MAZMJSI-1"
     },
     {
       "name": "Homepage Enhancements",
-      "task": "MAZDA-14"
+      "task": "MAZHE-1"
+    },
+    {
+      "name": "Connectivity Integration",
+      "task": "MAZCI-1"
     },
     {
       "name": "Siebel2Salesforce",
-      "task": "MAZDA-15"
+      "task": "MAZS2S-1"
     },
     {
       "name": "Landing Pages",
-      "task": "MAZDA-16"
-    },
-    {
-      "name": "Poool",
-      "task": "MAZDA-18"
+      "task": "MAZLP-1"
     }
   ]
 }
