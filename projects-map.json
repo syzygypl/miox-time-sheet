@@ -9,8 +9,12 @@
       "task": "MAZDA-19"
     },
     {
-      "name": "CX Web Centralization",
+      "name": "MME CX Web Centralization",
       "task": "MAZDA-2"
+    },
+    {
+      "name": "NSC CX Web Centralization",
+      "task": "MAZDA-20"
     },
     {
       "name": "PLM Platform Management",
