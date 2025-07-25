@@ -79,6 +79,10 @@
     {
       "name": "Poool",
       "task": "MAZDA-18"
+    },
+    {
+      "name": "OSB - Online Service Booking",
+      "task": "MAZDA-22"
     }
   ]
 }
