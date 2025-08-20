@@ -83,6 +83,10 @@
     {
       "name": "OSB - Online Service Booking",
       "task": "MAZDA-22"
+    },
+    {
+      "name": "Connectivity Integration",
+      "task": "MAZDA-24"
     }
   ]
 }
