@@ -87,6 +87,10 @@
     {
       "name": "Connectivity Integration",
       "task": "MAZDA-24"
+    },
+    {
+      "name": "Accessory Worlds",
+      "task": "MAZDA-25"
     }
   ]
 }
