@@ -53,10 +53,6 @@
       "task": "MAZDA-10"
     },
     {
-      "name": "Design System Code",
-      "task": "MAZDA-11"
-    },
-    {
       "name": "Mazda Stories Enhancements",
       "task": "MAZDA-12"
     },
@@ -91,6 +87,10 @@
     {
       "name": "Accessory Worlds",
       "task": "MAZDA-25"
+    },
+    {
+      "name": "HERE integration - HG",
+      "task": "MAZDA-26"
     }
   ]
 }

@@ -6,10 +6,13 @@ const SUPABASE_API_KEY =
 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_API_KEY);
 
-const checkIsQa = () => {
+const getUserSettings = () => {
   return new Promise((resolve, reject) => {
-    chrome.storage.sync.get(["qa"], (result) => {
-      resolve(result.qa || false);
+    chrome.storage.sync.get(["qa", "midRate"], (result) => {
+      resolve({
+        isQa: result.qa || false,
+        isMidRate: result.midRate || false,
+      });
     });
   });
 };
@@ -48,7 +51,7 @@ const extensionDialog = async () => {
   };
 
   const jiraUrl = await getCurrentTabUrl();
-  const isQa = await checkIsQa();
+  const { isQa, isMidRate } = await getUserSettings();
 
   if (isQa) {
     selectors.submit.style.display = "none";
@@ -65,11 +68,17 @@ const extensionDialog = async () => {
       .from("worklogs")
       .select("*")
       .eq("task", jiraUrl);
-      const worklogData = data[0];
+    const worklogData = data[0];
     if (worklogData) {
       selectors.progressDev.setAttribute("value", worklogData.logged_dev || 0);
-      selectors.estimationDev.setAttribute("value", worklogData.estimation_dev || 0);
-      selectors.progressBarDev.setAttribute("value", worklogData.logged_dev || 0);
+      selectors.estimationDev.setAttribute(
+        "value",
+        worklogData.estimation_dev || 0
+      );
+      selectors.progressBarDev.setAttribute(
+        "value",
+        worklogData.logged_dev || 0
+      );
       selectors.progressBarDev.setAttribute("max", worklogData.estimation_dev);
       selectors.labelDev.innerText = `${worklogData.logged_dev || 0}h`;
     } else {
@@ -81,37 +90,42 @@ const extensionDialog = async () => {
     }
 
     selectors.timeSpentHours.addEventListener("change", function (e) {
-      const selectorValue = parseFloat(e.currentTarget.value);
+      const selectedHours = parseFloat(e.currentTarget.value) || 0;
+      const adjustedSelectedTime = isMidRate
+        ? selectedHours * 0.75
+        : selectedHours;
       const progressDevValue = parseFloat(
         selectors.progressDev.getAttribute("value")
       );
       const estimationDev = selectors.estimationDev.value;
-      
 
-      if (selectorValue > 2 && parseFloat(estimationDev) === 0) {
+      if (adjustedSelectedTime > 2 && parseFloat(estimationDev) === 0) {
         selectors.submit.setAttribute("disabled", true);
-        alert("You need to add estimation first. Make sure it's also added to task comment");
+        alert(
+          "You need to add estimation first. Make sure it's also added to task comment"
+        );
       } else {
         selectors.submit.removeAttribute("disabled");
       }
 
-
       selectors.progressBarDev.setAttribute(
         "value",
-        selectorValue + progressDevValue
+        adjustedSelectedTime + progressDevValue
       );
-      selectors.labelDev.innerText = `${selectorValue + progressDevValue}h`;
+      selectors.labelDev.innerText = `${
+        adjustedSelectedTime + progressDevValue
+      }h`;
     });
 
     selectors.timeSpentMinutes.addEventListener("change", function (e) {
-      const selectorValue = parseFloat(e.currentTarget.value / 10);
+      const selectedMinutes = parseFloat(e.currentTarget.value) / 10 || 0;
       const progressValue = parseFloat(
         selectors.progressBarDev.getAttribute("value")
       );
 
       selectors.submit.removeAttribute("disabled");
 
-      selectors.labelDev.innerText = `${progressValue + selectorValue}h`;
+      selectors.labelDev.innerText = `${progressValue + selectedMinutes}h`;
     });
 
     selectors.estimationDev.addEventListener("blur", async function (e) {
@@ -151,10 +165,7 @@ const extensionDialog = async () => {
     setTimeout(() => {
       prompt(
         `https://jirasyzygy.atlassian.net/browse/${jiraPLTaskID}`,
-        `${taskId}, ${taskName}: ${extension_desc.replace(
-          /&quot;/g,
-          "'"
-        )}`
+        `${taskId}, ${taskName}: ${extension_desc.replace(/&quot;/g, "'")}`
       );
 
       window.open(
@@ -198,9 +209,12 @@ const extensionDialog = async () => {
           selectors.progressDev.getAttribute("value")
         );
 
-        const loggedTime = parseFloat(
-          `${selectors.timeSpentHours.value}.${selectors.timeSpentMinutes.value}`
-        );
+        const selectedHours = parseFloat(selectors.timeSpentHours.value) || 0;
+        const selectedMinutes =
+          parseFloat(selectors.timeSpentMinutes.value) / 10 || 0;
+        const loggedHours = isMidRate ? selectedHours * 0.75 : selectedHours;
+
+        const loggedTime = parseFloat(`${loggedHours + selectedMinutes}`);
 
         await supabase
           .from("worklogs")
