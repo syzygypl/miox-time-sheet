@@ -9,7 +9,7 @@
       "task": "MAZDA-19"
     },
     {
-      "name": "MME CX Web Centralization",
+      "name": "MME Development Support",
       "task": "MAZDA-2"
     },
     {
@@ -25,10 +25,6 @@
       "task": "MAZDA-17"
     },
     {
-      "name": "Standalone Finance Calculator",
-      "task": "MAZDA-5"
-    },
-    {
       "name": "Finance Calculators",
       "task": "MAZDA-21"
     },
@@ -39,54 +35,6 @@
     {
       "name": "WCAG",
       "task": "MAZDA-7"
-    },
-    {
-      "name": "M2H Map Update",
-      "task": "MAZDA-8"
-    },
-    {
-      "name": "Dynamic Yield Discovery",
-      "task": "MAZDA-9"
-    },
-    {
-      "name": "iPaaS Migration",
-      "task": "MAZDA-10"
-    },
-    {
-      "name": "Mazda Stories Enhancements",
-      "task": "MAZDA-12"
-    },
-    {
-      "name": "Mazda J90 Showroom Improvements",
-      "task": "MAZDA-13"
-    },
-    {
-      "name": "Homepage Enhancements",
-      "task": "MAZDA-14"
-    },
-    {
-      "name": "Siebel2Salesforce",
-      "task": "MAZDA-15"
-    },
-    {
-      "name": "Landing Pages",
-      "task": "MAZDA-16"
-    },
-    {
-      "name": "Poool",
-      "task": "MAZDA-18"
-    },
-    {
-      "name": "OSB - Online Service Booking",
-      "task": "MAZDA-22"
-    },
-    {
-      "name": "Connectivity Integration",
-      "task": "MAZDA-24"
-    },
-    {
-      "name": "Accessory Worlds",
-      "task": "MAZDA-25"
     },
     {
       "name": "HERE integration - HG",
