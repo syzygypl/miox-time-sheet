@@ -39,6 +39,10 @@
     {
       "name": "HERE integration - HG",
       "task": "MAZDA-26"
+    },
+    {
+      "name": "SEO / GEO",
+      "task": "MAZDA-27"
     }
   ]
 }
