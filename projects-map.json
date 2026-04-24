@@ -43,6 +43,10 @@
     {
       "name": "SEO / GEO",
       "task": "MAZDA-27"
+    },
+    {
+      "name": "Data layer changes",
+      "task": "MAZDA-28"
     }
   ]
 }
