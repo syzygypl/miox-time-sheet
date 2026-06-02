@@ -51,6 +51,10 @@
     {
       "name": "Market Development Support",
       "task": "MAZDA-29"
+    },
+    {
+      "name": "WCAG Strategic Budget",
+      "task": "MAZDA-30"
     }
   ]
 }
